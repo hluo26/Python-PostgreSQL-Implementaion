@@ -2,8 +2,10 @@
 import os
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
+from flask_bootstrap import Bootstrap
 
 db = SQLAlchemy()
+bootstrap = Bootstrap()
 
 
 def create_app(config_type):
@@ -13,6 +15,8 @@ def create_app(config_type):
     app.config.from_pyfile(configuration)
 
     db.init_app(app)
+    bootstrap.init_app(app)
+
 
     from app.city_weather import main
 

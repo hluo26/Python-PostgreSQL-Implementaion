@@ -21,7 +21,7 @@ def load_data(cities):
         weather_info = {}
         zip1 = x.zip_code
         url = 'http://api.openweathermap.org/data/2.5/weather?zip=' + str(zip1) + ',us&appid=' + api_key
-        print(url, file=sys.stderr)
+        #print(url, file=sys.stderr)
         html = urllib.request.urlopen(url)
         data = json.loads(html.read())
         description = data['weather'][0]['description']
@@ -40,6 +40,8 @@ def load_data(cities):
         weather_info['temp_min'] = temp_min
         combination.append(weather_info)
     return combination
+
+
 
 
 
