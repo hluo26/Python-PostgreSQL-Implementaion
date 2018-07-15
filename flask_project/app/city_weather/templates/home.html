@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <TITLE>Daily Weather</TITLE>
+</head>
+<body>
+    {% for x in combination %}
+        {% for key,item in x.items() %}
+            <p>{{ key }} : {{ item }}</p>
+        {% endfor %}
+        <p> </p></br>
+    {% endfor %}
+</body>
+</html>
